@@ -1,25 +1,17 @@
-# operator overloading
-# we have different methods for different operators
-# method overloading
 # method overriding
+# due to inheritance
+# my phone rides my fathers phone if i have a phone
+# otherwise   my fathers phone is my phone
 
 
-class Student:
-    def __init__(self, m1, m2):
-        self.m1 = m1
-        self.m2 = m2
-
-    def sum(self, a=None, b=None, c=None):
-        s = 0
-        if a != None and b != None and c != None:
-            s = a + b + c
-        elif a != None and b != None:
-            s = a + b
-        else:
-            s = a
-        return s
+class A:
+    def show(self):
+        print("in A Show")
 
 
-s1 = Student(59, 69)
+class B(A):
+    pass
 
-print(s1.sum(5, 9))
+
+b1 = B()
+b1.show()

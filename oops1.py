@@ -1,26 +1,43 @@
-class Student:
-    def __init__(self, name, rollno):
-        self.name = name
-        self.rollno = rollno
-        self.lap = self.Laptop()
-
-    def show(self):
-        print(self.name, self.rollno)
-        self.lap.show()
-
-    # inner class
-    class Laptop:
-        def __init__(self):
-            self.brand = "HP"
-            self.cpu = "i5"
-            self.ram = 8
-
-        def show(self):
-            print(self.brand, self.cpu)
+# INHERITANCE
+# super class A
+# sub class B
+# constructor will call a method which is init
+# constructor of B will also call the constructor of A
+# from top to bottom priority if two different parent class at same level
+# to represent super class we use super method
 
 
-s1 = Student("Navin", 2)
-s2 = Student("vaibhav", 3)
+class A:
+    def feature1(self):
+        print("feature 1A working")
+
+    def feature2(self):
+        print("feature 2A working")
+
+    def __init__(self):
+        print("In A Init")
 
 
-s1.show()
+class B:
+    def feature1(self):
+        print("feature 1B working")
+
+    def feature2(self):
+        print("feature 2B working")
+
+    # def __init__(self):
+    #     super().__init__()
+    #     print("in B init")
+
+
+class C(A, B):
+    def __init__(self):
+        print("in c init")
+
+    def feat(self):
+        super().feature2()
+
+
+c1 = C()
+c1.feature1()
+c1.feat()

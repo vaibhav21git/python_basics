@@ -1,26 +1,38 @@
-# in oops two types of variable
-# 1)instance variable
-# 2)class variable
-
-# if you define a variable inside a init function then it is a instance variable
-# but if outside the init it is class variable;
-# namespace is an area where you create and store object/variable
+# get the value of variables  - accesors
+# modify the value of variables - mutators
+# @classmethod are decorators
+# static method is nothing to do with class variable and instance variable
+# why none is printing in staticmethod doubt
 
 
-class Car:
-    wheels = 4
+class Student:
+    school = "vaibhav university"
 
-    def __init__(self):
-        self.mil = 10
-        self.com = "BMW"
+    def __init__(self, m1, m2, m3):
+        self.m1 = m1
+        self.m2 = m2
+        self.m3 = m3
+
+    def avg(self):
+        return (self.m1 + self.m2 + self.m3) / 3
+
+    def get_m1(self):
+        return self.m1
+
+    def set_m1(self, value):
+        self.m1 = value
+
+    @classmethod
+    def getschool(cls):
+        return cls.school
+
+    @staticmethod
+    def info():
+        print("this is student class in abc module")
 
 
-c1 = Car()
-c2 = Car()
+s1 = Student(99, 76, 34)
+s2 = Student(90, 55, 77)
 
-c1.mil = 8
 
-Car.wheels = 5
-
-print(c1.com, c1.mil, c1.wheels)
-print(c2.com, c2.mil)
+print(Student.info())

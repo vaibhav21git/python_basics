@@ -1,43 +1,34 @@
-# INHERITANCE
-# super class A
-# sub class B
-# constructor will call a method which is init
-# constructor of B will also call the constructor of A
-# from top to bottom priority if two different parent class at same level
-# to represent super class we use super method
+# Polymorphism - One thing can take many forms
 
 
-class A:
-    def feature1(self):
-        print("feature 1A working")
+# DUCK TYPING IN PYTHON
 
-    def feature2(self):
-        print("feature 2A working")
+# IF BEHAVIOR OF A BIRD IS LIKE A DUCK THEN THE BIRD IS A DUCK
 
-    def __init__(self):
-        print("In A Init")
+# the moment you give a name to variable that just the name of memeory assigned
+# to that variable
 
 
-class B:
-    def feature1(self):
-        print("feature 1B working")
-
-    def feature2(self):
-        print("feature 2B working")
-
-    # def __init__(self):
-    #     super().__init__()
-    #     print("in B init")
+class Pycharm:
+    def execute(self):
+        print("compiling")
+        print("running")
 
 
-class C(A, B):
-    def __init__(self):
-        print("in c init")
-
-    def feat(self):
-        super().feature2()
+class MyEditor:
+    def execute(self):
+        print("spell check")
+        print("convention check")
 
 
-c1 = C()
-c1.feature1()
-c1.feat()
+class Laptop:
+    def code(self, ide):
+        ide.execute()
+
+
+ide = Pycharm()
+
+
+lap1 = Laptop()
+
+lap1.code(ide)

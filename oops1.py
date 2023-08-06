@@ -1,35 +1,26 @@
-# all the objects are present in the heap memory
-# class cannot be empty instead u should write pass
-# q1) who allocates the size of object
-# a1) it is the constructor who allocates the size of object
-# self is like a pointer  it will point based on c1.update() where c1 is
-# passed as an argument in update function
+# in oops two types of variable
+# 1)instance variable
+# 2)class variable
+
+# if you define a variable inside a init function then it is a instance variable
+# but if outside the init it is class variable;
+# namespace is an area where you create and store object/variable
 
 
-class Computer:
+class Car:
+    wheels = 4
+
     def __init__(self):
-        self.name = "vaibhav"
-        self.age = 23
-
-    def update(self):
-        self.age = 87
-
-    def compare(self, other):
-        if self.age == other.age:
-            return True
-        else:
-            return False
+        self.mil = 10
+        self.com = "BMW"
 
 
-c1 = Computer()
-c1.age = 24
-c2 = Computer()
+c1 = Car()
+c2 = Car()
 
-# c1 is comparing itself with c2
-if c1.compare(c2):
-    print("they are same")
-else:
-    print("they are different")
+c1.mil = 8
 
+Car.wheels = 5
 
-print(c1.name)
+print(c1.com, c1.mil, c1.wheels)
+print(c2.com, c2.mil)

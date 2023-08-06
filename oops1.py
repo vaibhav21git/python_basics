@@ -1,34 +1,22 @@
-# Polymorphism - One thing can take many forms
+# operator overloading
+# we have different methods for different operators
 
 
-# DUCK TYPING IN PYTHON
+class Student:
+    def __init__(self, m1, m2):
+        self.m1 = m1
+        self.m2 = m2
 
-# IF BEHAVIOR OF A BIRD IS LIKE A DUCK THEN THE BIRD IS A DUCK
-
-# the moment you give a name to variable that just the name of memeory assigned
-# to that variable
-
-
-class Pycharm:
-    def execute(self):
-        print("compiling")
-        print("running")
+    def __add__(self, other):
+        m1 = self.m1 + other.m1
+        m2 = self.m2 + other.m2
+        s3 = Student(m1, m2)
+        return s3
 
 
-class MyEditor:
-    def execute(self):
-        print("spell check")
-        print("convention check")
+s1 = Student(58, 40)
+s2 = Student(56, 44)
 
+s3 = s1 + s2
 
-class Laptop:
-    def code(self, ide):
-        ide.execute()
-
-
-ide = Pycharm()
-
-
-lap1 = Laptop()
-
-lap1.code(ide)
+print(s3.m1)

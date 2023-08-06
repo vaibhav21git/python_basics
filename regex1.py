@@ -50,6 +50,12 @@ import re
 # for email id
 
 text = "vaibhav21nitrkl@gmail.com"
-pattern = "^[\w]+@{1}[\w.]+"
+# pattern = "^[\w]+@{1}[\w.]+"
+
+
+pattern = "^([w+])(?<areacode>[a-z])(@{1}[\w.]+)"
+
+print(re.sub("areacode[a-z]", "#", text))
+
 x = re.findall(pattern, text)
 print(x)

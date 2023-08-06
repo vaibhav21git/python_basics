@@ -1,21 +1,24 @@
 # integer float double are pre-built classes
 # attributes are variables
 # behavior are methods(functions)
+# def __init__(self) is like a constructor
+# init will be called automatically
+# if u want the argument to be in part of object then u should
+# use self.name = name
 
 
 class Computer:
+    def __init__(self, cpu, ram):
+        self.cpu = cpu
+        self.ram = ram
+
     def config(self):
-        print("i5, 16GB,1TB")
+        print("Config is", self.cpu, self.ram)
 
 
-com1 = Computer()
-com2 = Computer()
-# this operation will give us the object of computer
-# Computer.config is wrong
-# you have to mention hey vaibhav walk, ravi walk not hey human walk
+com1 = Computer("i5", 16)
+com2 = Computer("Ryzen 5", 8)
 
-Computer.config(com1)
-Computer.config(com2)
 
-# below is generally used
 com1.config()
+com2.config()

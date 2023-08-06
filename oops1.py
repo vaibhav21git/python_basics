@@ -1,24 +1,35 @@
-# integer float double are pre-built classes
-# attributes are variables
-# behavior are methods(functions)
-# def __init__(self) is like a constructor
-# init will be called automatically
-# if u want the argument to be in part of object then u should
-# use self.name = name
+# all the objects are present in the heap memory
+# class cannot be empty instead u should write pass
+# q1) who allocates the size of object
+# a1) it is the constructor who allocates the size of object
+# self is like a pointer  it will point based on c1.update() where c1 is
+# passed as an argument in update function
 
 
 class Computer:
-    def __init__(self, cpu, ram):
-        self.cpu = cpu
-        self.ram = ram
+    def __init__(self):
+        self.name = "vaibhav"
+        self.age = 23
 
-    def config(self):
-        print("Config is", self.cpu, self.ram)
+    def update(self):
+        self.age = 87
+
+    def compare(self, other):
+        if self.age == other.age:
+            return True
+        else:
+            return False
 
 
-com1 = Computer("i5", 16)
-com2 = Computer("Ryzen 5", 8)
+c1 = Computer()
+c1.age = 24
+c2 = Computer()
+
+# c1 is comparing itself with c2
+if c1.compare(c2):
+    print("they are same")
+else:
+    print("they are different")
 
 
-com1.config()
-com2.config()
+print(c1.name)
